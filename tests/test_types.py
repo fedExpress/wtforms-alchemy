@@ -28,6 +28,7 @@ from wtforms_components.fields import (
     EmailField,
     IntegerField,
     IntIntervalField,
+    JSONField,
     SelectField,
     StringField,
     TimeField
@@ -191,9 +192,9 @@ class TestModelColumnToFormFieldTypeConversion(ModelFormTestCase):
         self.init(type_=sa.types.REAL)
         self.assert_type('test_column', FloatField)
 
-    def test_json_converts_to_textarea_field(self):
+    def test_json_converts_to_jsonfield_field(self):
         self.init(type_=sa.types.JSON)
-        self.assert_type('test_column', TextAreaField)
+        self.assert_type('test_column', JSONField)
 
     @mark.xfail('phone_number.phonenumbers is None')
     def test_phone_number_converts_to_phone_number_field(self):

@@ -33,6 +33,7 @@ from wtforms_components import (
     EmailField,
     IntegerField,
     IntIntervalField,
+    JSONField,
     SelectField,
     StringField,
     TimeField
@@ -92,7 +93,7 @@ class FormGenerator(object):
         (sa.types.Unicode, StringField),
         (sa.types.String, StringField),
         (sa.types.Time, TimeField),
-        (sa.types.JSON, TextAreaField),
+        (sa.types.JSON, JSONField),
         (types.ArrowType, DateTimeField),
         (types.ChoiceType, SelectField),
         (types.ColorType, ColorField),
